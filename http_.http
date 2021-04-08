@@ -1,0 +1,2 @@
+### test ping
+GET http://localhost:8888/ping HTTP/1.0
