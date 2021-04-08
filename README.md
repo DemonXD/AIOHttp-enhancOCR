@@ -17,22 +17,22 @@ ProjectName and Description
 <br />
 
 <p align="center">
-  <a href="https://github.com/shaojintian/Best_README_template/">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+  <a href="https://github.com/DemonXD/AIOHttp-enhancOCR/">
+    <img src="icon/logo.png" alt="Logo" width="80" height="80">
   </a>
 
   <h3 align="center">OCR-Based On CnOcr</h3>
   <p align="center">
-    一个"完美的"README模板去快速开始你的项目！
+    一个基于opencv-contrib和CnOcr的图片识别web！
     <br />
-    <a href="https://github.com/shaojintian/Best_README_template"><strong>探索本项目的文档 »</strong></a>
+    <a href="https://github.com/DemonXD/AIOHttp-enhancOCR"><strong>探索本项目的文档 »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/shaojintian/Best_README_template">查看Demo</a>
+    <a href="https://github.com/DemonXD/AIOHttp-enhancOCR">查看Demo</a>
     ·
-    <a href="https://github.com/shaojintian/Best_README_template/issues">报告Bug</a>
+    <a href="https://github.com/DemonXD/AIOHttp-enhancOCR/issues">报告Bug</a>
     ·
-    <a href="https://github.com/shaojintian/Best_README_template/issues">提出新特性</a>
+    <a href="https://github.com/DemonXD/AIOHttp-enhancOCR/issues">提出新特性</a>
   </p>
 
 </p>
@@ -55,45 +55,37 @@ ProjectName and Description
 
 ### 上手指南
 
-请将所有链接中的“shaojintian/Best_README_template”改为“your_github_name/your_repository”
-
+要求在Linux下，且装有docker:V17 以上，Dockerfile 使用了FROM语句
 
 ###### 开发前的配置要求
 
-1. xxxxx x.x.x
-2. xxxxx x.x.x
+1. 安装Docker
 
 ###### **安装步骤**
 
-1. Get a free API Key at [https://example.com](https://example.com)
-2. Clone the repo
+1. Clone the repo
 
 ```sh
-git clone https://github.com/shaojintian/Best_README_template.git
+git clone https://github.com/DemonXD/AIOHttp-enhancOCR.git
+sh ./publish.sh
 ```
 
 ### 文件目录说明
 eg:
 
 ```
-
-
+...
 ```
-
-
-### 开发的架构 
-
-请阅读[ARCHITECTURE.md](https://github.com/shaojintian/Best_README_template/blob/master/ARCHITECTURE.md) 查阅为该项目的架构。
 
 ### 部署
 
-暂无
+同安装
 
-### 使用到的框架
+### 使用到的框架和工具
 
-- [xxxxxxx](https://getbootstrap.com)
-- [xxxxxxx](https://jquery.com)
-- [xxxxxxx](https://laravel.com)
+- [AIOHttp](https://docs.aiohttp.org/en/stable/)
+- [OpenCV](https://docs.opencv.org/master/d6/d00/tutorial_py_root.html)
+- [CnOcr](https://github.com/breezedeus/cnocr)
 
 
 
@@ -103,28 +95,25 @@ eg:
 
 ### 作者
 
-xxx@xxxx
-
-知乎:xxxx  &ensp; qq:xxxxxx    
+kanonxmm@163.com
 
  *您也可以在贡献者名单中参看所有参与该项目的开发者。*
 
 
 
 <!-- links -->
-[your-project-path]:shaojintian/Best_README_template
-[contributors-shield]: https://img.shields.io/github/contributors/shaojintian/Best_README_template.svg?style=flat-square
-[contributors-url]: https://github.com/shaojintian/Best_README_template/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/shaojintian/Best_README_template.svg?style=flat-square
-[forks-url]: https://github.com/shaojintian/Best_README_template/network/members
-[stars-shield]: https://img.shields.io/github/stars/shaojintian/Best_README_template.svg?style=flat-square
-[stars-url]: https://github.com/shaojintian/Best_README_template/stargazers
-[issues-shield]: https://img.shields.io/github/issues/shaojintian/Best_README_template.svg?style=flat-square
-[issues-url]: https://img.shields.io/github/issues/shaojintian/Best_README_template.svg
-[license-shield]: https://img.shields.io/github/license/shaojintian/Best_README_template.svg?style=flat-square
-[license-url]: https://github.com/shaojintian/Best_README_template/blob/master/LICENSE.txt
+[contributors-shield]: https://img.shields.io/github/contributors/DemonXD/AIOHttp-enhancOCR.svg?style=flat-square
+[contributors-url]: https://github.com/DemonXD/AIOHttp-enhancOCR/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/DemonXD/AIOHttp-enhancOCR.svg?style=flat-square
+[forks-url]: https://github.com/DemonXD/AIOHttp-enhancOCR/network/members
+[stars-shield]: https://img.shields.io/github/stars/DemonXD/AIOHttp-enhancOCR.svg?style=flat-square
+[stars-url]: https://github.com/DemonXD/AIOHttp-enhancOCR/stargazers
+[issues-shield]: https://img.shields.io/github/issues/DemonXD/AIOHttp-enhancOCR.svg?style=flat-square
+[issues-url]: https://img.shields.io/github/issues/DemonXD/AIOHttp-enhancOCR.svg
+[license-shield]: https://img.shields.io/github/license/DemonXD/AIOHttp-enhancOCR.svg?style=flat-square
+[license-url]: https://github.com/DemonXD/AIOHttp-enhancOCR/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555
-[linkedin-url]: https://linkedin.com/in/shaojintian
+[linkedin-url]: https://linkedin.com/in/DemonXD
 
 
 
