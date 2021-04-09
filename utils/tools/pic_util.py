@@ -1,6 +1,21 @@
+import io
 import base64
 import cv2
 import numpy as np
+from PIL import Image
+
+def check_pic_valid(imgbuf):
+    """[summary]
+
+    Args:
+        img ([BytesIO]): [文件流]
+    """
+    try:
+        Image.open(io.BytesIO(imgbuf)).verify()
+    except:
+        return False
+    return True
+
 
 def b64Tndarray(b64str):
     img = base64.b64decode(b64str)
