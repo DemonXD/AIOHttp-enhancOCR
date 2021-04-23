@@ -9,7 +9,9 @@ from .pic_util import check_pic_valid
 
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(__file__)))
-ocr = CnOcr(root=os.path.join(BASE_DIR, "cnocr_model"))
+ocr = CnOcr(
+    root=os.path.join(BASE_DIR, "cnocr_model"),
+    model_name="densenet-lite-gru")
 
 
 def predict_text(img: bytes):
@@ -39,4 +41,3 @@ def predict(img):
     }
     result_ = result_map.get(len(result), "".join(["".join(x) for x in result])).replace(" ", "")
     return result_ if result_ is not None else "未识别到内容"
-

@@ -14,6 +14,6 @@ def init_urls(app):
     })
     cors.add(app.router.add_get("/ping", handle))
     cors.add(app.router.add_get("/echo", wshandle))
-    cors.add(app.router.add_post("/ocr_file", ocr_handle))
-    cors.add(app.router.add_post("/ocr_b64", ocr_handle_b64))
+    cors.add(app.router.add_post("/api/ocr/fromfile", ocr_handle))
+    cors.add(app.router.add_post("/api/ocr/fromb64", ocr_handle_b64))
     return app

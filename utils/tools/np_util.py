@@ -65,6 +65,13 @@ def nearest_resize(img, src_size):
             src[i, j] = img[src_x, src_y]
     return src
 
+
+def cv_show(name,img):
+    cv2.imshow(name,img)
+    cv2.waitKey(0)
+    cv2.destroyAllWindows()
+
+
 def bc_interpolate(img, ax=1., ay=1.):
     H, W, C = img.shape
     aH = int(ay * H)
@@ -133,18 +140,17 @@ def bc_interpolate(img, ax=1., ay=1.):
 
 
 
-def cv_show(name,img):
-    cv2.imshow(name,img)
-    cv2.waitKey(0)
-    cv2.destroyAllWindows()
-
 
 if __name__ == "__main__":
+    import sys
     import platform
     if platform.platform().startswith("Windows"):
-        image = cv2.imread(r"C:\Users\ci24924\Desktop\22.jpg")
+        image = cv2.imread(r"{0}".format(sys.argv[1]))
     else:
-        image = cv2.imread(r'/mnt/c/Users/ci24924/Desktop/22.jpg')
+        image = cv2.imread(r"{0}".format(sys.argv[1]))
+
+    print(sys.argv[1])
+
     dst = numpy.ones((image.shape[0],image.shape[1]),dtype = numpy.int8)
 
     scale_percent = 150       # percent of original size
@@ -154,7 +160,7 @@ if __name__ == "__main__":
     # resize image
     # resized = cv2.resize(image, dim, interpolation = cv2.INTER_LINEAR)
     # im = scale_resize(image, 150)
-    im = dnn_scale(image, 1.2)
+    im = dnn_scale(image, 1.1)
 
 
     # im = Image.fromarray(im)
