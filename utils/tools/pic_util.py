@@ -3,6 +3,8 @@ import base64
 import cv2
 import numpy as np
 from PIL import Image
+from io import BytesIO
+
 
 def check_pic_valid(imgbuf):
     """[summary]
@@ -35,6 +37,22 @@ def img2b64(path):
         encoded_image = base64.b64encode(image_file.read())
         req_file = encoded_image.decode("utf8")
     return req_file
+
+
+def Bytes2ndarray(byts):
+    """[summary]
+
+    Args:
+        byts ([type]): [description]
+
+    Returns:
+        [type]: [description]
+    
+    Desc.:
+        image file bytes to opencv img format(BGR)
+    """
+    return np.array(Image.open(BytesIO(byts)).convert("BGR"))
+
 
 def checkb64(imgstr):
     try:

@@ -17,7 +17,7 @@ ocr = CnOcr(
 def predict_text(img: bytes):
     checked = check_pic_valid(img)
     if checked:
-        imgs = np.array(Image.open(BytesIO(img)).convert("RGB"))
+        imgs = np.array(Image.open(BytesIO(img)).convert("BGR"))
 
         # Image Enhancement
         # dnn_scale
