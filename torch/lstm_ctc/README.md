@@ -1,3 +1,5 @@
+参考：https://my.oschina.net/u/876354/blog/3070699
+
 （1）什么是LSTM  
 为了实现对不定长文字的识别，就需要有一种能力更强的模型，该模型具有一定的记忆能力，能够按时序依次处理任意长度的信息，这种模型就是“循环神经网络”（Recurrent Neural Networks，简称RNN）。
 LSTM（Long Short Term Memory，长短期记忆网络）是一种特殊结构的RNN（循环神经网络），用于解决RNN的长期依赖问题，也即随着输入RNN网络的信息的时间间隔不断增大，普通RNN就会出现“梯度消失”或“梯度爆炸”的现象，这就是RNN的长期依赖问题，而引入LSTM即可以解决这个问题。LSTM单元由输入门（Input Gate）、遗忘门（Forget Gate）和输出门（Output Gate）组成，具体的技术原理的工作过程详见之前的文章（文章：白话循环神经网络（RNN）），LSTM的结构如下图所示。  
