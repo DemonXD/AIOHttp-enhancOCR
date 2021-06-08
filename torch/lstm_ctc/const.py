@@ -1,8 +1,12 @@
 # 数据集，可根据需要增加英文或其它字符
-SETS = [
-    '0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
-    '@', '-', '_', '.'
-]
+
+SETS = [str(i) for i in range(10)] + \
+       [chr(ord('a')+i) for i in range(0, 26)] + \
+       [chr(ord('A')+i) for i in range(0, 26)] + \
+       [',', '.', '?', ';', '"', '[', ']', '{', '}',
+        '`', '~', '!', '@', '#', '$', '%', '^', '&',
+        '*', '(', ')', '-', '=', '_', '+', '|', '\\',
+        '/', '<', '>', ':', "'"]
 
 # 分类数量
 num_classes = len(SETS) + 1     # 数据集字符数+特殊标识符
@@ -28,5 +32,5 @@ BATCH_SIZE = 32
 TRAIN_SIZE = BATCHES * BATCH_SIZE
 
 # 数据集目录、模型目录
-data_dir = '/tmp/lstm_ctc_data/'
-model_dir = '/tmp/lstm_ctc_model/'
+data_dir = "/tmp/lstm_ctc_data/"
+model_dir = "/tmp/lstm_ctc_model/"
