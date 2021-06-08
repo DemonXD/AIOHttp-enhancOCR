@@ -13,3 +13,8 @@ CTC（Connectionist Temporal Classifier，联接时间分类器），主要用�
 
 由于字符变形等原因，导致对输入图像分块识别时，相邻块可能会识别为同个结果，字符重复出现。因此，通过CTC来解决对齐问题，模型训练后，对结果中去掉间隔字符、去掉重复字符（如果同个字符连续出现，则表示只有1个字符，如果中间有间隔字符，则表示该字符出现多次），如下图所示：  
 ![](https://github.com/DemonXD/AIOHttp-enhancOCR/blob/master/torch/readme_image/ctc2.jpg)
+
+
+
+CRNN（Convolutional Recurrent Neural Network，卷积循环神经网络）是目前比较流行的文字识别模型，不需要对样本数据进行字符分割，可识别任意长度的文本序列，模型速度快、性能好。网络结构如下图所示，主要由卷积层、循环层、转录层3部分组成，具体技术原理请详见之前的文章（文章：[大话文本识别经典模型 CRNN](https://my.oschina.net/u/876354/blog/3047853)）
+![](https://github.com/DemonXD/AIOHttp-enhancOCR/blob/master/torch/readme_image/crnn.jpg)
