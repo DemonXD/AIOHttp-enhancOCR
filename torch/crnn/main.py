@@ -3,7 +3,8 @@
 # Author: Miles Xu
 # Email: kanonxmm@163.com
 # Desc.: 参考
-# https://github.com/Belval/CRNN.git
+# https://github.com/Belval/CRNN.git         (tensorflow)
+# https://github.com/meijieru/crnn.pytorch   (pytorch)
 #################################
 # -*- coding: utf-8 -*-
 
