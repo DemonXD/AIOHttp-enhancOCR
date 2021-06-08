@@ -1,12 +1,13 @@
 import os
 import re
+from sys import path
 import fire
 from base64 import b64decode
 from typing import List
 from tqdm import tqdm, tqdm_notebook
 
 from threading import Thread
-from mxnet.ndarray.gen_op import exp, random_generalized_negative_binomial
+from mxnet.ndarray.gen_op import exp, random_generalized_negative_binomial, reset_arrays
 from utils.tools.ocr_util import predict_text, predict
 from utils.tools.pic_util import checkb64, b64Tndarray, img2b64
 
@@ -71,7 +72,6 @@ def reNameImg(img_path: str) -> None:
             new_name = re.sub(replace_str_pattern1_foxmail, "foxmail", new_name)
             new_name = re.sub(replace_str_pattern1_gmail, "gmail", new_name)
             new_name = re.sub(replace_str_pattern1_aliyun, "aliyun", new_name)
-            new_name.replace("I", "l")
             if old_name == new_name:
                 pass
             else:
@@ -86,10 +86,59 @@ def reNameImg(img_path: str) -> None:
             #         pass
     print(f"转换完毕")
 
+
+def reCount(img_path: str) -> None:
+    """[summary]
+
+    Args:
+        img_path (str): [文件目录]
+    
+    Desc.:
+        重新编号文件
+    """
+    count = 1
+    for root, dirs, files in os.walk(img_path):
+        for each_file in files:
+            old_file_name = each_file.split("_")
+            old_file_name[0] = str(count)
+            new_file_name = "_".join(old_file_name)
+            if old_file_name == new_file_name:
+                pass
+            else:
+                try:
+                    os.rename(os.path.join(root, each_file), os.path.join(root, new_file_name))
+                except Exception:
+                    pass
+            count += 1
+    print("rename complete!")
+
+
+def CountChar(img_path: str) -> None:
+    """[summary]
+        去重文件名的字符
+
+    Args:
+        img_path (str): [文件列表]
+    """
+    from collections import defaultdict
+    result = defaultdict(str)
+    pattern = re.compile(r"\d+_(.*).jpg|png", re.S)
+    for root, dirs, files in os.walk(img_path):
+        for each_file in files:
+            # print(each_file, re.findall(pattern, each_file))
+            if "]" in each_file:
+                print(each_file)
+            for each_char in list(re.findall(pattern, each_file)[0]):
+                result[each_char] = 0
+
+    print(f"result: {result.keys()}")
+
 if __name__ == "__main__":
     # RmSpeciContentImage(r"D:\Tmp_Projects\AIOHttp-enhancOCR\imgs")
     # reNameImg(r"D:\Tmp_Projects\AIOHttp-enhancOCR\imgs")
     fire.Fire({
         "Label": RmSpeciContentImage,
-        "Rename": reNameImg
+        "Rename": reNameImg,
+        "ReCount": reCount,
+        "CountChar": CountChar
     })
