@@ -4,3 +4,4 @@
 **/log
 **/resources
 imgs
+!/torch/imgs
